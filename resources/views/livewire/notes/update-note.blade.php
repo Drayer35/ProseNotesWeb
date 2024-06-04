@@ -1,13 +1,13 @@
 <div class="flex flex-wrap justify-center">
     <div wire:click="$set('open', true)"
-    class=".self-start break-words max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transform hover:scale-105 transition-transform duration-400 ease-in-out select-none m-4">
+    class="flex flex-col justify-between break-words max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transform hover:scale-105 transition-transform duration-400 ease-in-out select-none m-4">
         @if (is_null($note->image))
         @else
             <div class="flex">
                 <img src="data:image/png;base64,{{ base64_encode($note->image) }}">
             </div>
         @endif
-        <div class="p-5">
+        <div class="p-5 flex-grow">
             <div class="flex justify-between items-center">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $note->Title }}
                 </h5>
@@ -17,7 +17,9 @@
                     <i class="fa-solid fa-thumbtack"></i>
                 @endif
             </div>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> {{ $note->Note }}</p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $note->Note }}</p>
+        </div>
+        <div class="p-5">
             <div class="flex justify-between">
                 @if ($note->IsFinished)
                     <i class="fa-solid fa-flag" style="color: #37c35a;"></i>
@@ -28,9 +30,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <x-dialog-modal wire:model="open">
         <x-slot name="title">
