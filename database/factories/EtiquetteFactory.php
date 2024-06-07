@@ -3,12 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Category;
+use App\Models\Etiquette;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Etiquette>
  */
-class CategoryFactory extends Factory
+class EtiquetteFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,12 +16,12 @@ class CategoryFactory extends Factory
      * @return array<string, mixed>
      */
 
-     protected $model =Category::class;
+     protected $model =Etiquette::class;
 
     public function definition(): array
     {
         return [
-            'category' =>$this -> faker->randomElement(['CATEGORIA1','CATEGORIA2','CATEGORIA3','CATEGORIA4']),
+            'description' =>$this -> faker->randomElement(['CATEGORIA1','CATEGORIA2','CATEGORIA3','CATEGORIA4']),
             'IsEnabled' =>$this -> faker->randomElement([true,false]),
         ];
     }

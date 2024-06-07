@@ -12,13 +12,13 @@
                     <i class="fa-solid fa-x fa-xl" style="color: #393636;"></i>
                 </button>
             </div>
-            @livewire('create-note')
+            @livewire('note.create-note')
         </div>
         @if($fixeds->count())
         <h1>{{__('FIXEDS')}}</h1>
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
             @foreach ($fixeds as $fixed)
-                @livewire('update-note', ['note' => $fixed], key($fixed->id))
+                @livewire('note.update-note', ['note' => $fixed], key($fixed->id))
             @endforeach
         </div>
         @else
@@ -28,7 +28,7 @@
         <h1>{{__('OTHERS')}}</h1>
             <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
                 @foreach ($notes as $note)
-                    @livewire('update-note', ['note' => $note], key($note->id))
+                    @livewire('note.update-note', ['note' => $note], key($note->id))
                 @endforeach
             </div>
         @else

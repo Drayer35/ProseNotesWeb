@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Note;
 
 use App\Models\Note;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

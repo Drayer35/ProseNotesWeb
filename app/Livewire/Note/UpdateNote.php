@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Note;
 
-use App\Models\Note;
 use Livewire\Component;
 use Livewire\Attributes\On;
 

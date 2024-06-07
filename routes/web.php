@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\Controller;
-use App\Livewire\ViewNote;
-use App\Livewire\CreateNote;
-use App\Livewire\ViewEtiquette;
+use App\Livewire\Note\ViewNote;
+use App\Livewire\Note\CreateNote;
+use App\Livewire\Etiquette\ViewEtiquette;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Route;
 

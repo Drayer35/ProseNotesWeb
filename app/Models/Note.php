@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Etiquette;
 
 class Note extends Model
 {
@@ -13,13 +14,9 @@ class Note extends Model
     protected $table='notes';
 
     protected $fillable =['id','id_user','Title','Note','IsArchived','IsFixed','IsFinished'];
-    public function images(){
-        return $this->hasMany(Image::class,'id_note');
-    }
-
-
-    public function element(){
-        return $this->hasMany(Element::class);
+    
+    public function etiquettes(){
+        return $this->belongsToMany(Etiquette::class);
     }
 }
 

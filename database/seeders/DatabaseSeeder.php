@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Etiquette;
 use App\Models\Note;
 use App\Models\NoteCategory;
 use App\Models\User;
@@ -25,7 +26,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Drayer',
             'email' => 'jdcyonel2@gmail.com',
         ]);
-        Category::factory(4)->create();
+        Etiquette::factory(4)->create();
         Note::factory(50)->create();
     }
 }
