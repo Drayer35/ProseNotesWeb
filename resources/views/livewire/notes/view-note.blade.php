@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content-main')
+@component('layouts.app')
     <div>
         <div class="lg:flex md:flex  justify-between items-center">
             <div class=" bg-gray-100  focus:bg-white px-4 rounded-lg shadow-md flex items-center">
@@ -42,5 +40,5 @@
             </div>
         @endif
     </div>
+@endcomponent
 
-@endsection

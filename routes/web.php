@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Livewire\ViewNote;
 use App\Livewire\CreateNote;
+use App\Livewire\ViewEtiquette;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,9 @@ Route::middleware([
     Route::controller(ViewNote::class)->group(function(){
         Route::get('/notes','render')->name('notes');
     });
-  
+    Route::controller(ViewEtiquette::class)->group(function(){
+        Route::get('/etiquettes','render')->name('etiquettes');
+    });
 });
 Route::controller(CreateNote::class)->group(function(){
     Route::post('/save','save')->name('save');

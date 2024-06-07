@@ -12,25 +12,25 @@
                 </div>
                 <div class="flex select-none  justify-center">
                     <ul class="flex justify-center">
-                        <x-nav-link href="{{ route('notes') }}" class="mx-3" :active="request()->routeIs('dashboard')">
+                        <x-nav-link href="{{ route('notes') }}" class="mx-3" :active="request()->routeIs('notes')">
                             <i class="fa-solid fa-note-sticky mr-2" style="color: hsl(0, 3%, 22%);"></i>
-                            {{ __('Dashboard') }}
+                            {{ __('Note') }}
                         </x-nav-link> 
     
-                        <x-nav-link href="{{ route('notes') }}" class="mx-3" :active="request()->routeIs('dashboard')">
+                        <x-nav-link href="{{ route('etiquettes') }}" class="mx-3" :active="request()->routeIs('etiquettes')">
                             <i class="fa-solid fa-tags  mr-2" style="color: hsl(0, 3%, 22%);"></i>
                             {{ __('Etiquets') }}
                         </x-nav-link> 
     
-                        <x-nav-link href="{{ route('notes') }}" class="mx-3" :active="request()->routeIs('dashboard')">
+                        {{-- <x-nav-link href="{{ route('archiveds') }}" class="mx-3" :active="request()->routeIs('archiveds')">
                             <i class="fa-solid fa-box-archive mr-2" style="color: hsl(0, 3%, 22%);"></i>
                             {{ __('Archiveds') }}
                         </x-nav-link> 
     
-                        <x-nav-link href="{{ route('notes') }}" class="mx-3" :active="request()->routeIs('dashboard')">
+                        <x-nav-link href="{{ route('trash') }}" class="mx-3" :active="request()->routeIs('trash')">
                             <i class="fa-solid fa-trash mr-2" style="color: hsl(0, 3%, 22%);"></i>
                             {{ __('Trash') }}
-                        </x-nav-link> 
+                        </x-nav-link>  --}}
                     </ul>
                 </div>
             </div>
@@ -91,14 +91,14 @@
                     </div>
                 @endif
                 <!-- Settings Dropdown -->
-                <div class="ms-3 relative">
+                <div class="ms-3 relative"> 
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button
                                     class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                     <img class="h-8 w-8 rounded-full object-cover"
-                                        src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                        src="{{ Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
