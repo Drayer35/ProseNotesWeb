@@ -14,8 +14,15 @@ class ViewNote extends Component
   public function render()
   {
     $user  = Auth::user();
-    $fixeds = Note::where('IsFixed', 1);
-    $notes = Note::where('id_user', $user->id)->orderBy('id', 'desc')->get();
+    $fixeds = Note::where('id_user', $user->id)
+              ->where('IsArchived', false)
+             ->where('Isfixed', true)
+             ->orderBy('id', 'desc')
+             ->get();
+    $notes = Note::where('id_user', $user->id)
+            ->where('IsArchived', false)
+            ->where('Isfixed', false)
+            ->orderBy('id', 'desc')->get();
     return view('livewire.notes.view-note', compact(['notes', 'fixeds']));
   }
 }

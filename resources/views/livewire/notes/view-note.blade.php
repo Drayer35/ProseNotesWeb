@@ -16,8 +16,19 @@
             </div>
             @livewire('create-note')
         </div>
+        @if($fixeds->count())
+        <h1>{{__('FIXEDS')}}</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
+            @foreach ($fixeds as $fixed)
+                @livewire('update-note', ['note' => $fixed], key($fixed->id))
+            @endforeach
+        </div>
+        @else
+        @endif
+
         @if ($notes->count())
-            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-5">
+        <h1>{{__('OTHERS')}}</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
                 @foreach ($notes as $note)
                     @livewire('update-note', ['note' => $note], key($note->id))
                 @endforeach

@@ -1,6 +1,6 @@
 <div class="flex flex-wrap justify-center">
     <div wire:click="$set('open', true)"
-    class="flex flex-col justify-between break-words max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transform hover:scale-105 transition-transform duration-400 ease-in-out select-none m-4">
+    class="cursor-pointer flex flex-col justify-between break-words max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-xl transform hover:scale-105 transition-transform duration-400 ease-in-out select-none">
         @if (is_null($note->image))
         @else
             <div class="flex">
