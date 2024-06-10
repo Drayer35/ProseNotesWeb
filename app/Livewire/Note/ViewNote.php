@@ -8,9 +8,8 @@ use Illuminate\Support\Facades\Auth;
 class ViewNote extends Component
 {
   public $open = false;
-
-
-  #[On('note-created')]
+  
+  #[On('note')] 
   public function render()
   {
     $user  = Auth::user();
@@ -20,9 +19,9 @@ class ViewNote extends Component
              ->orderBy('id', 'desc')
              ->get();
     $notes = Note::where('id_user', $user->id)
-            ->where('IsArchived', false)
             ->where('Isfixed', false)
             ->orderBy('id', 'desc')->get();
     return view('livewire.notes.view-note', compact(['notes', 'fixeds']));
+    $this->dispatch('update');
   }
 }

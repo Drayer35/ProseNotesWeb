@@ -9,11 +9,12 @@ class UpdateNote extends Component
 {
     public $open = false;   
     public $note;
+
+
     
-    #[On('note-created')]
+    #[On('update')] 
     public function render()
     {
-
         return view('livewire.notes.update-note',['note' => $this->note]);
     }
 }

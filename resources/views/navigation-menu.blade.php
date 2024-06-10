@@ -21,16 +21,6 @@
                             <i class="fa-solid fa-tags  mr-2" style="color: hsl(0, 3%, 22%);"></i>
                             {{ __('Etiquets') }}
                         </x-nav-link> 
-    
-                        {{-- <x-nav-link href="{{ route('archiveds') }}" class="mx-3" :active="request()->routeIs('archiveds')">
-                            <i class="fa-solid fa-box-archive mr-2" style="color: hsl(0, 3%, 22%);"></i>
-                            {{ __('Archiveds') }}
-                        </x-nav-link> 
-    
-                        <x-nav-link href="{{ route('trash') }}" class="mx-3" :active="request()->routeIs('trash')">
-                            <i class="fa-solid fa-trash mr-2" style="color: hsl(0, 3%, 22%);"></i>
-                            {{ __('Trash') }}
-                        </x-nav-link>  --}}
                     </ul>
                 </div>
             </div>

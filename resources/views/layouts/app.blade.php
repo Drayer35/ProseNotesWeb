@@ -17,46 +17,19 @@
     <!-- Styles -->
     @livewireStyles
 </head>
-{{-- 
-<body class="white">
-    <div class="w-full"  style="position: fixed; z-index: 20;">
-        <!-- Aquí está la navegación, asumiendo que está en un componente de Livewire -->
-        @livewire('navigation-menu')
-    </div>
-    <div class="min-h-screen bg-gray-100 flex pt-16">
-            <section class="flex p-8 overflow-auto max-w-full w-full justify-center">
-                @yield('content-main')
-            </section>
-        </div>
-    </div>
 
-    @stack('modals')
-    @livewireScripts
-</body> --}}
 
 <body class="font-sans antialiased">
-    <x-banner />
-
     <div class="min-h-screen bg-gray-100">
-        @livewire('navigation-menu')
-
-        <!-- Page Heading -->
-        {{-- @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif --}}
-        <!-- Page Content -->
+        <div  class="w-full"  style="position: fixed; z-index: 20;">
+            @livewire('navigation-menu')
+        </div>
         <div class="min-h-screen bg-gray-100 flex pt-16">
-            <main class="flex overflow-auto max-w-full w-full justify-center">
+            <main class="p-8 flex overflow-auto max-w-full w-full justify-center">
                 {{ $slot }}
             </main>
         </div>
-
         @stack('modals')
-
         @livewireScripts
 </body>
 
