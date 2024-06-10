@@ -21,15 +21,6 @@ class CreateNote extends Component
         'title'=>'required|max:100',
         'note'=>'required|max:2000',
     ];
-    public function updatingOpen()
-    {
-        if ($this->open == false) {
-            $this->reset(['title', 'note']);
-        }
-    }
-
-
-
 
     public function save()
     {
@@ -40,12 +31,7 @@ class CreateNote extends Component
             'Note' => $this->note
         ]);
         $this->reset(['open','title','note']);
-
-        $of=$this->dispatch('note');
-        if($of){
-        
-            $this->render();
-        }
+        $this->dispatch('note-created');
     }
     public function render()
     {

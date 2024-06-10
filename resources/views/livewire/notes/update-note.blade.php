@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-center">
+<div> {{-- QUITAR flex flex-wrap justify-center PARA QUE SE AJUSTE A SU TAMAÑO---}}
     <div 
         class="cursor-pointer flex flex-col justify-between break-words max-w-sm bg-white border border-gray-200 rounded-lg shadow  hover:shadow-xl transform hover:scale-105 transition-transform duration-400 ease-in-out select-none">
         @if (is_null($note->image))
@@ -12,11 +12,11 @@
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{{ $note->Title }}
                 </h5>
                 @if ($note->IsFixed)
-                    <button class="p-1 rounded-full hover:bg-gray-500">
+                    <button   class="p-1 rounded-full hover:bg-gray-500">
                         <i class="fa-solid fa-thumbtack fa-sm m-2" style="color: #e17f23;"></i>
                     </button>
                 @else
-                <button class=" rounded-full hover:bg-gray-500">
+                <button  wire:click="sol" class=" rounded-full hover:bg-gray-500">
                     <i class="fa-solid fa-thumbtack fa-sm m-2"></i>
                 </button>   
                 @endif

@@ -9,7 +9,7 @@ class ViewNote extends Component
 {
   public $open = false;
   
-  #[On('note')] 
+  #[On('note-created')] 
   public function render()
   {
     $user  = Auth::user();
@@ -22,6 +22,5 @@ class ViewNote extends Component
             ->where('Isfixed', false)
             ->orderBy('id', 'desc')->get();
     return view('livewire.notes.view-note', compact(['notes', 'fixeds']));
-    $this->dispatch('update');
   }
 }
