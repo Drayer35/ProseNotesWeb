@@ -11,6 +11,7 @@ class Image extends Model
     protected $table='images';
 
     public function note(){
-        return $this->belongsTo(Note::class,'id');
+        return $this->belongsTo(Note::class);
     }
+
 }

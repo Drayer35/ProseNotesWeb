@@ -16,9 +16,10 @@ return new class extends Migration
             $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
             $table->text('Title');
             $table->text('Note');
-            $table->boolean('IsArchived')->default(false);
-            $table->boolean('IsFixed')->default(false);
-            $table->boolean('IsFinished')->default(false);
+            $table->boolean('IsArchived')->default(false)->nullable();
+            $table->boolean('IsFixed')->default(false)->nullable();
+            $table->boolean('IsFinished')->default(false)->nullable();
+            $table->boolean('IsDeleted')->default(false)->nullable();
             $table->timestamps();
         });
     }

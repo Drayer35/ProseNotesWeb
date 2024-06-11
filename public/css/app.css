@@ -13,7 +13,3 @@
     background-color: white;
     /* Color de fondo del scroll */
   }
-.right-section {
-    max-height: calc(100vh - 80px); /* Ajusta la altura máxima según sea necesario, restando la altura del encabezado */
-    overflow-y: auto; /* Agrega barras de desplazamiento vertical cuando sea necesario */
-}

@@ -1,7 +1,9 @@
     <div>
         <div class="lg:flex md:flex  justify-between items-center">
-            <div class=" bg-gray-100  focus:bg-white px-4 rounded-lg shadow-md flex items-center">
-                <button class="hover:bg-gray-300 rounded-2xl p-1">
+            
+            @if ($fixeds->count() ||$notes->count() )
+            <div class=" bg-white  focus:bg-white px-4 rounded-lg shadow-md flex items-center">
+                <button class="h   rounded-rb-full  rounded-rt-full  ">
                     <i class="fa-solid fa-magnifying-glass fa-xl " style="color: #393636;"></i>
                 </button>
                 <input type="text"
@@ -11,10 +13,11 @@
                     <i class="fa-solid fa-x fa-xl" style="color: #393636;"></i>
                 </button>
             </div>
+            @endif
             @livewire('note.create-note')
         </div>
         @if ($fixeds->count())
-            <h1>{{ __('FIXEDS') }}</h1>
+        <h5 class="text-xl font-bold dark:text-white">{{ __('FIXEDS') }}</h5>
             <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
                 @foreach ($fixeds as $fixed)
                     @livewire('note.update-note', ['note' => $fixed], key($fixed->id))
@@ -24,7 +27,7 @@
         @endif
 
         @if ($notes->count())
-            <h1>{{ __('OTHERS') }}</h1>
+        <h5 class="text-xl font-bold dark:text-white">{{ __('OTHERS') }}</h5>
             <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
                 @foreach ($notes as $note)
                     @livewire('note.update-note', ['note' => $note], key($note->id))

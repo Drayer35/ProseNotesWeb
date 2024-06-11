@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
+use Livewire\WithFileUploads;
 use function Termwind\render;
 
 class CreateNote extends Component
-
 {
+    use WithFileUploads;
     use HasFactory;
-    public $title, $note;
+    public $title, $note,$fixed,$archived;
+    public $images = [];
     public $isFixed;
     public $open = false;
 
@@ -28,9 +30,11 @@ class CreateNote extends Component
         Note::create([
             'id_user' => Auth::user()->id,
             'Title' => $this->title,
-            'Note' => $this->note
+            'Note' => $this->note,
+            'IsFixed' =>$this->fixed,
+            'IsArchived' => $this->archived
         ]);
-        $this->reset(['open','title','note']);
+        $this->reset(['open','title','note','fixed','archived']);
         $this->dispatch('note-created');
     }
     public function render()

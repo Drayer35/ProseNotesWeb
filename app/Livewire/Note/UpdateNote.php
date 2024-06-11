@@ -10,7 +10,7 @@ use Livewire\Attributes\On;
 class UpdateNote extends Component
 {
     public $open = false;
-    public $note;
+    public $title, $note,$fixed,$archived;
 
     #[On('update')]
     public function render()

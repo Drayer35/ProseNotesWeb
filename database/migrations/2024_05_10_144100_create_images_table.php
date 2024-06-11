@@ -16,7 +16,6 @@ return new class extends Migration
             $table->binary('image')->nullable();
 
             $table->foreignId('id_note')->references('id')->on('notes')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 
