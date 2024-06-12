@@ -18,8 +18,9 @@ class Note extends Model
     public function etiquettes(){
         return $this->belongsToMany(Etiquette::class);
     }
+
     public function images(){
-        return $this->hasMany(Image::class);
+        return $this->hasMany(Image::class,'id_note');
     }
 }
 

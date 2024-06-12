@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Livewire\Note;
-
 use App\Models\Note;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;

@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Etiquette extends Model
 {
     use HasFactory;
+
+    public $timestamps = true;
     protected $table='etiquettes';
 
     public function notes(){

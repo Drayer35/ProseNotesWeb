@@ -1,7 +1,6 @@
     <div>
         <div class="lg:flex md:flex  justify-between items-center">
-            
-            @if ($fixeds->count() ||$notes->count() )
+            {{-- @if ($fixeds->count() || $notes->count())
             <div class=" bg-white  focus:bg-white px-4 rounded-lg shadow-md flex items-center">
                 <button class="h   rounded-rb-full  rounded-rt-full  ">
                     <i class="fa-solid fa-magnifying-glass fa-xl " style="color: #393636;"></i>
@@ -13,21 +12,26 @@
                     <i class="fa-solid fa-x fa-xl" style="color: #393636;"></i>
                 </button>
             </div>
-            @endif
+            @endif --}}
             @livewire('note.create-note')
         </div>
         @if ($fixeds->count())
-        <h5 class="text-xl font-bold dark:text-white">{{ __('FIXEDS') }}</h5>
+            <h5 class="text-xl font-bold dark:text-white">{{ __('FIXEDS') }}</h5>
             <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
-                @foreach ($fixeds as $fixed)
-                    @livewire('note.update-note', ['note' => $fixed], key($fixed->id))
+                @foreach ($fixeds as $note)
+                    <x-note-card :note="$note" />
+
+
+
+
+                    
                 @endforeach
             </div>
         @else
         @endif
 
         @if ($notes->count())
-        <h5 class="text-xl font-bold dark:text-white">{{ __('OTHERS') }}</h5>
+            <h5 class="text-xl font-bold dark:text-white">{{ __('OTHERS') }}</h5>
             <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
                 @foreach ($notes as $note)
                     @livewire('note.update-note', ['note' => $note], key($note->id))

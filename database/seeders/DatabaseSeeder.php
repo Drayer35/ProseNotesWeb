@@ -4,11 +4,13 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Etiquette;
+use App\Models\Image;
 use App\Models\Note;
 use App\Models\NoteCategory;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,5 +30,6 @@ class DatabaseSeeder extends Seeder
         ]);
         Etiquette::factory(4)->create();
         Note::factory(50)->create();
+        Image::factory(2)->create();
     }
 }

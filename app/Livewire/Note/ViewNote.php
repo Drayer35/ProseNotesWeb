@@ -16,11 +16,15 @@ class ViewNote extends Component
   {
     $user  = Auth::user();
     $fixeds = Note::where('id_user', $user->id)
-      ->where('IsArchived', false)
-      ->orWhereNull('IsArchived')
-      ->where('Isfixed', true)
-      ->orderBy('id', 'desc')
-      ->get();
+    ->where(function ($query) {
+      $query->where('IsFixed', true);
+    })
+    ->where(function ($query) {
+      $query->where('IsArchived', false)
+        ->orWhereNull('IsArchived');
+    })
+    ->orderBy('id', 'desc')
+    ->get();
       
     $notes = Note::where('id_user', $user->id)
       ->where(function ($query) {
