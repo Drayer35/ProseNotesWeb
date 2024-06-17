@@ -30,6 +30,6 @@ class DatabaseSeeder extends Seeder
         ]);
         Etiquette::factory(4)->create();
         Note::factory(50)->create();
-        Image::factory(2)->create();
+        Image::factory(4)->create();
     }
 }

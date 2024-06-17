@@ -13,7 +13,7 @@ class Note extends Model
     public $timestamps = true;
     protected $table='notes';
 
-    protected $fillable =['id','id_user','Title','Note','IsArchived','IsFixed','IsFinished'];
+    protected $fillable =['id','id_user','Title','Content','IsArchived','IsFixed','IsFinished'];
     
     public function etiquettes(){
         return $this->belongsToMany(Etiquette::class);

@@ -21,8 +21,8 @@ class NoteFactory extends Factory
     {
         return [
             'id_user' =>1,
-            'title' =>$this -> faker->randomElement(['TITULO1','TITULO2','TITULO3','TITULO']),
-            'note' =>$this -> faker->paragraph(),
+            'Title' =>$this -> faker->randomElement(['TITULO1','TITULO2','TITULO3','TITULO']),
+            'Content' =>$this -> faker->paragraph(),
             'IsArchived' =>$this -> faker->randomElement([true,false]),
             'IsFixed' =>$this -> faker->randomElement([true,false]),
             'IsFinished' =>$this -> faker->randomElement([true,false]),

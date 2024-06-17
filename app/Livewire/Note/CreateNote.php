@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Livewire\Note;
-
 use App\Models\Etiquette;
 use App\Models\Note;
 use App\Models\image;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
-
 use Livewire\WithFileUploads;
 
 class CreateNote extends Component
@@ -16,12 +14,12 @@ class CreateNote extends Component
     use WithFileUploads;
     use HasFactory;
 
-    public $title, $note, $fixed, $archived;
-    public $images = [],$checkEtiquettes = [];
-    public $open=false;
+    public $title, $content, $fixed, $archived;
+    public $images = [];
+    public $open_create=true;
     protected $rules = [
         'title' => 'required|max:80',
-        'note' => 'required|max:2000',
+        'content' => 'required|max:2000',
     ];
 
 
@@ -32,12 +30,12 @@ class CreateNote extends Component
         $note=Note::create([
             'id_user' => Auth::user()->id,
             'Title' => $this->title,
-            'Note' => $this->note,
+            'Content' => $this->content,
             'IsFixed' => $this->fixed,
             'IsArchived' => $this->archived,
         ]);
 
-        $this->reset(['open', 'title', 'note', 'fixed', 'archived', 'images']);
+        $this->reset(['open_create', 'title', 'content', 'fixed', 'archived', 'images']);
         $this->dispatch('note-created');
     }
 

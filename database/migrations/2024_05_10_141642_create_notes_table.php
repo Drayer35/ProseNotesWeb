@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
             $table->text('Title');
-            $table->text('Note');
+            $table->text('Content');
             $table->boolean('IsArchived')->default(false)->nullable();
             $table->boolean('IsFixed')->default(false)->nullable();
             $table->boolean('IsFinished')->default(false)->nullable();
